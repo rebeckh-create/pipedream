@@ -1,0 +1,94 @@
+# Studio Automation Configuration
+studio:
+  name: "HiYoga Studio"
+  type: "multi-purpose"  # audio, video, photography, multi-purpose
+  
+# Audio Equipment Configuration
+audio:
+  interface:
+    brand: "focusrite"
+    model: "scarlett_2i2"
+    sample_rate: 48000
+    buffer_size: 256
+  microphones:
+    - name: "main_vocal"
+      type: "condenser"
+      phantom_power: true
+      input_channel: 1
+    - name: "instrument"
+      type: "dynamic" 
+      phantom_power: false
+      input_channel: 2
+  monitors:
+    - name: "studio_monitors"
+      type: "active"
+      output_channels: [1, 2]
+
+# Video Equipment Configuration  
+video:
+  cameras:
+    - name: "main_camera"
+      type: "dslr"
+      connection: "usb"
+      resolution: "1920x1080"
+      fps: 30
+    - name: "overhead_camera"
+      type: "webcam"
+      connection: "usb"
+      resolution: "1280x720" 
+      fps: 30
+  lighting:
+    - name: "key_light"
+      type: "led_panel"
+      controllable: true
+      brightness: 80
+      color_temp: 5600
+    - name: "fill_light"
+      type: "softbox"
+      controllable: false
+      brightness: 60
+      color_temp: 5600
+
+# Automation Settings
+automation:
+  auto_start_recording: false
+  auto_backup: true
+  backup_location: "/workspace/backups"
+  session_templates:
+    - name: "yoga_class"
+      duration: 60  # minutes
+      audio_enabled: true
+      video_enabled: true
+      lighting_preset: "warm"
+    - name: "meditation"
+      duration: 30
+      audio_enabled: true
+      video_enabled: false
+      lighting_preset: "dim"
+    - name: "workshop"
+      duration: 120
+      audio_enabled: true
+      video_enabled: true
+      lighting_preset: "bright"
+
+# Network and Streaming
+streaming:
+  enabled: false
+  platforms: []
+  # platforms:
+  #   - name: "youtube"
+  #     stream_key: "your_stream_key"
+  #   - name: "twitch" 
+  #     stream_key: "your_stream_key"
+  bitrate: 2500
+  resolution: "1920x1080"
+
+# File Management
+files:
+  recording_path: "/workspace/recordings"
+  export_path: "/workspace/exports"
+  temp_path: "/workspace/temp"
+  naming_convention: "{date}_{session_type}_{timestamp}"
+  formats:
+    audio: ["wav", "mp3"]
+    video: ["mp4", "mov"]

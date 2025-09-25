@@ -1,0 +1,28 @@
+# Studio Automation Dependencies
+
+# Core dependencies
+PyYAML>=6.0
+python-dateutil>=2.8.0
+
+# Audio processing (optional - install if needed)
+# pyaudio>=0.2.11
+# soundfile>=0.12.0
+# numpy>=1.21.0
+
+# Video processing (optional - install if needed)  
+# opencv-python>=4.5.0
+# ffmpeg-python>=0.2.0
+
+# Hardware control (optional - install based on your equipment)
+# pyserial>=3.5  # For serial device control
+# requests>=2.25.0  # For HTTP-based device APIs
+# websockets>=10.0  # For WebSocket device control
+
+# Development and testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+black>=22.0.0
+flake8>=5.0.0
+
+# Logging and monitoring
+colorlog>=6.0.0
