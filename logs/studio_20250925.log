@@ -1,0 +1,40 @@
+2025-09-25 08:41:06,266 - __main__ - INFO - Studio automation system initialized
+2025-09-25 08:41:11,557 - src.studio_automation - INFO - Studio automation system initialized
+2025-09-25 08:41:13,119 - src.studio_automation - INFO - Studio automation system initialized
+2025-09-25 08:41:13,119 - src.studio_automation - INFO - Starting session with template: yoga_class
+2025-09-25 08:41:13,119 - src.studio_automation - INFO - Setting lighting preset: warm
+2025-09-25 08:41:13,120 - src.studio_automation - INFO - Lighting set to 70% brightness, 3200K
+2025-09-25 08:41:13,120 - src.studio_automation - INFO - Setting up audio recording
+2025-09-25 08:41:13,120 - src.studio_automation - INFO - Audio interface: focusrite scarlett_2i2
+2025-09-25 08:41:13,120 - src.studio_automation - INFO - Sample rate: 48000Hz, Buffer: 256
+2025-09-25 08:41:13,120 - src.studio_automation - INFO - Setting up video recording
+2025-09-25 08:41:13,120 - src.studio_automation - INFO - Camera: main_camera (1920x1080@30fps)
+2025-09-25 08:41:13,120 - src.studio_automation - INFO - Camera: overhead_camera (1280x720@30fps)
+2025-09-25 08:41:13,120 - src.studio_automation - INFO - Session 20250925_084113 started successfully
+2025-09-25 08:41:19,289 - src.studio_automation - INFO - Studio automation system initialized
+2025-09-25 08:41:20,851 - src.studio_automation - INFO - Studio automation system initialized
+2025-09-25 23:12:02,750 - __main__ - INFO - Studio automation system initialized
+2025-09-25 23:12:27,489 - src.studio_automation - INFO - Studio automation system initialized
+2025-09-25 23:12:32,888 - src.studio_automation - INFO - Studio automation system initialized
+2025-09-25 23:12:32,888 - src.studio_automation - INFO - Starting session with template: yoga_class
+2025-09-25 23:12:32,888 - src.studio_automation - INFO - Setting lighting preset: warm
+2025-09-25 23:12:32,888 - src.studio_automation - INFO - Lighting set to 70% brightness, 3200K
+2025-09-25 23:12:32,888 - src.studio_automation - INFO - Setting up audio recording
+2025-09-25 23:12:32,888 - src.studio_automation - INFO - Audio interface: focusrite scarlett_2i2
+2025-09-25 23:12:32,888 - src.studio_automation - INFO - Sample rate: 48000Hz, Buffer: 256
+2025-09-25 23:12:32,888 - src.studio_automation - INFO - Setting up video recording
+2025-09-25 23:12:32,888 - src.studio_automation - INFO - Camera: main_camera (1920x1080@30fps)
+2025-09-25 23:12:32,888 - src.studio_automation - INFO - Camera: overhead_camera (1280x720@30fps)
+2025-09-25 23:12:32,888 - src.studio_automation - INFO - Session 20250925_231232 started successfully
+2025-09-25 23:12:40,079 - src.studio_automation - INFO - Studio automation system initialized
+2025-09-25 23:12:40,080 - src.studio_automation - INFO - Starting session with template: meditation
+2025-09-25 23:12:40,080 - src.studio_automation - INFO - Setting lighting preset: dim
+2025-09-25 23:12:40,080 - src.studio_automation - INFO - Lighting set to 30% brightness, 2700K
+2025-09-25 23:12:40,080 - src.studio_automation - INFO - Setting up audio recording
+2025-09-25 23:12:40,080 - src.studio_automation - INFO - Audio interface: focusrite scarlett_2i2
+2025-09-25 23:12:40,080 - src.studio_automation - INFO - Sample rate: 48000Hz, Buffer: 256
+2025-09-25 23:12:40,080 - src.studio_automation - INFO - Session 20250925_231240 started successfully
+2025-09-25 23:12:46,625 - src.studio_automation - INFO - Studio automation system initialized
+2025-09-25 23:12:51,427 - src.studio_automation - INFO - Studio automation system initialized
+2025-09-25 23:12:57,093 - src.studio_automation - INFO - Studio automation system initialized
+2025-09-25 23:13:04,602 - src.studio_automation - INFO - Studio automation system initialized
