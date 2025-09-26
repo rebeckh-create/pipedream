@@ -17,7 +17,7 @@ class TwilioWhatsApp:
         """Initialize Twilio WhatsApp client"""
         self.account_sid = os.getenv('TWILIO_ACCOUNT_SID')
         self.auth_token = os.getenv('TWILIO_AUTH_TOKEN')
-        self.from_number = os.getenv('TWILIO_WHATSAPP_NUMBER', 'whatsapp:+14155238886')
+        self.from_number = os.getenv('TWILIO_WHATSAPP_NUMBER', 'whatsapp:+640211999642')
         
         if not self.account_sid or not self.auth_token:
             logging.warning("Twilio credentials not configured")
