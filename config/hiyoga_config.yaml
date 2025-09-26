@@ -1,0 +1,259 @@
+# HiYoga.nz Studio Automation Configuration
+
+studio:
+  name: "HiYoga"
+  website: "hiyoga.nz"
+  location: "Auckland, New Zealand"
+  email: "info@hiyoga.nz"
+  phone: "+64 9 XXX XXXX"
+  business_hours:
+    monday: "6:00 AM - 9:00 PM"
+    tuesday: "6:00 AM - 9:00 PM"
+    wednesday: "6:00 AM - 9:00 PM"
+    thursday: "6:00 AM - 9:00 PM"
+    friday: "6:00 AM - 8:00 PM"
+    saturday: "7:00 AM - 6:00 PM"
+    sunday: "7:00 AM - 6:00 PM"
+
+# Integration Settings
+integrations:
+  mindbody:
+    api_key: "YOUR_MINDBODY_API_KEY"
+    site_id: "YOUR_MINDBODY_SITE_ID"
+    username: "YOUR_MINDBODY_USERNAME"
+    password: "YOUR_MINDBODY_PASSWORD"
+    enabled: true
+    sync_frequency: "hourly"  # hourly, daily
+    
+  whatsapp_business:
+    api_token: "YOUR_WHATSAPP_BUSINESS_API_TOKEN"
+    phone_number: "+64XXXXXXXXX"
+    webhook_url: "https://your-webhook-url.com/whatsapp"
+    enabled: true
+    
+  metasuite:
+    api_key: "YOUR_METASUITE_API_KEY"
+    facebook_page_id: "YOUR_FACEBOOK_PAGE_ID"
+    instagram_account_id: "YOUR_INSTAGRAM_ACCOUNT_ID"
+    enabled: true
+    
+  manychat:
+    api_token: "YOUR_MANYCHAT_API_TOKEN"
+    page_id: "YOUR_FACEBOOK_PAGE_ID"
+    enabled: true
+    
+  google:
+    analytics_id: "GA4-XXXXXXXXX"
+    business_profile_id: "YOUR_GOOGLE_BUSINESS_ID"
+    service_account_key: "path/to/google-service-account.json"
+    calendar_id: "YOUR_GOOGLE_CALENDAR_ID"
+    enabled: true
+    
+  email:
+    provider: "gmail"  # gmail, sendgrid, mailchimp
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    username: "your-email@gmail.com"
+    password: "your-app-password"
+    from_email: "info@hiyoga.nz"
+    from_name: "HiYoga Team"
+
+# Automation Rules
+automation_rules:
+  # New client automation
+  new_client_welcome:
+    enabled: true
+    delay_minutes: 30  # Wait 30 minutes after signup
+    channels: ["email", "whatsapp"]
+    
+  # Class booking confirmations
+  booking_confirmation:
+    enabled: true
+    immediate: true
+    channels: ["email", "whatsapp"]
+    
+  # Class reminders
+  class_reminders:
+    enabled: true
+    reminder_times: [1440, 120, 30]  # 24 hours, 2 hours, 30 minutes before
+    channels: ["whatsapp", "email"]
+    
+  # No-show follow-up
+  no_show_followup:
+    enabled: true
+    delay_hours: 2  # 2 hours after missed class
+    channels: ["whatsapp"]
+    max_frequency: "weekly"  # Don't spam
+    
+  # Membership renewal
+  membership_renewal:
+    enabled: true
+    reminder_days: [30, 14, 7, 1]  # Days before expiry
+    channels: ["email", "whatsapp"]
+    
+  # Win-back campaigns
+  win_back_campaign:
+    enabled: true
+    trigger_after_days: 14  # No visit for 14 days
+    frequency: "monthly"  # Send monthly until they return
+    channels: ["whatsapp", "email"]
+    
+  # Birthday messages
+  birthday_messages:
+    enabled: true
+    send_time: "09:00"
+    channels: ["whatsapp"]
+    include_offer: true
+    offer_text: "Enjoy a complimentary class this month!"
+    
+  # Review requests
+  review_requests:
+    enabled: true
+    trigger_after_classes: 5  # After 5th class
+    delay_hours: 24  # 24 hours after class
+    channels: ["email"]
+    
+  # Waitlist notifications
+  waitlist_notifications:
+    enabled: true
+    immediate: true
+    channels: ["whatsapp", "email"]
+    
+  # Payment failures
+  payment_failure_followup:
+    enabled: true
+    retry_schedule: [1, 3, 7]  # Retry after 1, 3, 7 days
+    channels: ["email", "whatsapp"]
+
+# Class Types and Automation
+class_types:
+  yoga:
+    - "Hatha Yoga"
+    - "Vinyasa Flow"
+    - "Yin Yoga"
+    - "Hot Yoga"
+    - "Beginner Yoga"
+    - "Advanced Yoga"
+    - "Prenatal Yoga"
+    - "Restorative Yoga"
+    
+  pilates:
+    - "Mat Pilates"
+    - "Reformer Pilates"
+    - "Pilates Fusion"
+    - "Beginner Pilates"
+    - "Advanced Pilates"
+    
+  specialty:
+    - "Meditation"
+    - "Breathwork"
+    - "Yoga Therapy"
+    - "Workshops"
+    - "Retreats"
+
+# Marketing Automation
+marketing:
+  email_campaigns:
+    welcome_series:
+      enabled: true
+      emails: 3
+      schedule: [0, 3, 7]  # Day 0, 3, and 7
+      
+    monthly_newsletter:
+      enabled: true
+      send_day: 1  # 1st of each month
+      send_time: "10:00"
+      
+    class_promotions:
+      enabled: true
+      frequency: "weekly"
+      
+  social_media:
+    auto_post_classes: true
+    auto_post_testimonials: true
+    post_schedule:
+      monday: ["motivation_monday"]
+      wednesday: ["wisdom_wednesday"]  
+      friday: ["feature_friday"]
+      
+  loyalty_program:
+    enabled: true
+    points_per_class: 1
+    reward_thresholds: [10, 25, 50]  # Free class at these points
+    
+# Reporting and Analytics
+reporting:
+  daily_reports:
+    enabled: true
+    send_time: "08:00"
+    recipients: ["manager@hiyoga.nz"]
+    
+  weekly_reports:
+    enabled: true
+    send_day: "monday"
+    send_time: "09:00"
+    
+  monthly_reports:
+    enabled: true
+    send_day: 1
+    send_time: "09:00"
+    
+  metrics_tracking:
+    - "new_clients"
+    - "class_attendance"
+    - "revenue"
+    - "retention_rate"
+    - "no_show_rate"
+    - "membership_renewals"
+    - "review_ratings"
+    - "social_media_engagement"
+
+# Business Rules
+business_rules:
+  cancellation_policy:
+    hours_before: 12
+    penalty_fee: 10.00
+    
+  late_arrival:
+    max_minutes: 10
+    
+  membership_freeze:
+    max_days: 30
+    fee: 15.00
+    
+  class_capacity:
+    yoga: 20
+    pilates: 12
+    specialty: 15
+    
+  pricing:
+    drop_in: 25.00
+    class_pack_5: 110.00
+    class_pack_10: 200.00
+    unlimited_monthly: 150.00
+    unlimited_annual: 1500.00
+
+# Data Management
+data:
+  backup_frequency: "daily"
+  backup_time: "02:00"
+  retention_days: 365
+  export_formats: ["csv", "json"]
+  
+  privacy:
+    data_retention_days: 2555  # 7 years
+    consent_tracking: true
+    gdpr_compliance: true
+    
+# Notifications
+notifications:
+  system_alerts:
+    email: "admin@hiyoga.nz"
+    whatsapp: "+64XXXXXXXXX"
+    
+  alert_types:
+    - "payment_failures"
+    - "system_errors"
+    - "integration_failures"
+    - "low_class_bookings"
+    - "high_cancellation_rates"
