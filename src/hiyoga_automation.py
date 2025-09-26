@@ -466,15 +466,26 @@ class HiYogaAutomation:
         self._log_automation("email", to_email, "sent", f"Email sent: {subject}")
     
     def _send_whatsapp_message(self, phone: str, message: str):
-        """Send WhatsApp message"""
+        """Send WhatsApp message via Twilio"""
         if not self.config["integrations"]["whatsapp"]["enabled"]:
             return
         
-        # This would integrate with WhatsApp Business API
-        self.logger.info(f"Sending WhatsApp to {phone}: {message[:50]}...")
-        
-        # For now, just log the message (in production, integrate with WhatsApp API)
-        self._log_automation("whatsapp", phone, "sent", f"WhatsApp sent: {message[:100]}")
+        try:
+            from .twilio_whatsapp import TwilioWhatsApp
+            twilio_wa = TwilioWhatsApp()
+            
+            success = twilio_wa.send_message(phone, message)
+            
+            if success:
+                self.logger.info(f"WhatsApp sent to {phone}: {message[:50]}...")
+                self._log_automation("whatsapp", phone, "sent", f"WhatsApp sent: {message[:100]}")
+            else:
+                self.logger.error(f"Failed to send WhatsApp to {phone}")
+                self._log_automation("whatsapp", phone, "failed", f"WhatsApp failed: {message[:100]}")
+                
+        except ImportError:
+            self.logger.error("Twilio not installed. Install with: pip install twilio")
+            self._log_automation("whatsapp", phone, "failed", "Twilio not installed")
     
     def _load_email_template(self, template_name: str, variables: Dict[str, Any]) -> str:
         """Load and process email template"""
