@@ -1,0 +1,54 @@
+{
+  "audio_interfaces": {
+    "focusrite_scarlett_2i2": {
+      "inputs": 2,
+      "outputs": 2,
+      "sample_rates": [44100, 48000, 88200, 96000],
+      "bit_depths": [16, 24],
+      "driver": "asio",
+      "latency_ms": 5
+    },
+    "behringer_umc202hd": {
+      "inputs": 2,
+      "outputs": 2,
+      "sample_rates": [44100, 48000, 88200, 96000],
+      "bit_depths": [16, 24],
+      "driver": "asio",
+      "latency_ms": 8
+    }
+  },
+  "cameras": {
+    "canon_eos_r": {
+      "type": "dslr",
+      "max_resolution": "4096x2160",
+      "frame_rates": [24, 30, 60],
+      "connection_types": ["usb", "hdmi"],
+      "auto_focus": true,
+      "manual_controls": true
+    },
+    "logitech_c920": {
+      "type": "webcam", 
+      "max_resolution": "1920x1080",
+      "frame_rates": [30, 60],
+      "connection_types": ["usb"],
+      "auto_focus": true,
+      "manual_controls": false
+    }
+  },
+  "lighting": {
+    "godox_sl60w": {
+      "type": "led_continuous",
+      "power_watts": 60,
+      "color_temp_range": [3300, 5600],
+      "dimming": true,
+      "remote_control": true
+    },
+    "neewer_660_led": {
+      "type": "led_panel",
+      "power_watts": 40,
+      "color_temp_range": [3200, 5600],
+      "dimming": true,
+      "remote_control": false
+    }
+  }
+}
